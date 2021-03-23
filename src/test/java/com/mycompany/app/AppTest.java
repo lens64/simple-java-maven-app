@@ -20,23 +20,14 @@ public class AppTest
         System.setOut(new PrintStream(outContent));
     }
 
-    @Test
-    public void testAppConstructor() {
-        try {
-            new App();
-        } catch (Exception e) {
-            fail("Construction failed.");
-        }
-    }
 
     @Test
-    public void testAppMain()
-    {
+    public void testAppMain() throws Exception {
         App.main(null);
         try {
-            assertEquals("Hello World!" + System.getProperty("line.separator"), outContent.toString());
+            assertEquals("Coffee: dark - Price: 1.2" + System.getProperty("line.separator"), outContent.toString());
         } catch (AssertionError e) {
-            fail("\"message\" is not \"Hello World!\"");
+            fail("\"message\" is not \"Coffee: dark - Price: 1.2\"");
         }
     }
 

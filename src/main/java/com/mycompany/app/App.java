@@ -7,22 +7,24 @@ package com.mycompany.app;
 public class App
 {
 
-    private final String message = "Hello World!";
-
-    private final String ABC = "Hallo Welt!";
-
     public App() {}
 
-    public static void main(String[] args) {
-        System.out.println(new App().getMessage());
-    }
+    public static void main(String[] args) throws Exception {
 
-    private final String getMessage() {
-        return message;
-    }
+        // Calculate coffeeA price and print it:
+        Coffee coffeeA = new Coffee("dark");
+        coffeeA.calculateCoffeePrice(coffeeA);
+        System.out.println("Coffee: "+coffeeA.getType() + " - Price: " +coffeeA.getPrice());
 
-    private final String getABC() {
-        return ABC;
-    }
+//        // Calculate coffeeB price and print it:
+//        CoffeeWithTaste coffeeB = new CoffeeWithTaste("milk");
+//        coffeeB.calculateCoffeePrice(coffeeB);
+//        System.out.println("Coffee: "+coffeeB.getType() + " - Price: " +coffeeB.getPrice());
+//
+//        // Test exception:
+//        CoffeeWithTaste coffeeC = new CoffeeWithTaste("blue");
+//        coffeeC.calculateCoffeePrice(coffeeC);
+//        System.out.println(coffeeC.getPrice());
 
+    }
 }
