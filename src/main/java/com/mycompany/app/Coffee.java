@@ -12,6 +12,10 @@ public class Coffee {
         this.type = type;
     }
 
+    public void printCoffeePrice(Coffee coffee) {
+        System.out.println("Coffee: "+coffee.getType() + " - Price: " +coffee.getPrice());
+    }
+
     public void calculateCoffeePrice(Coffee coffee) throws Exception {
 
         if (coffee.type.equals("dark")) {
@@ -22,6 +26,7 @@ public class Coffee {
                     double packaging = 0.7;
 
                     coffee.setPrice(ingredients + packaging);
+                    printCoffeePrice(coffee);
                 }
             }
 

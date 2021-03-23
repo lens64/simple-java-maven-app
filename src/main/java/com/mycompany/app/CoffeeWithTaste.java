@@ -17,18 +17,24 @@ public class CoffeeWithTaste extends Coffee {
                     double packaging = 0.7;
 
                     coffee.setPrice(ingredients + packaging);
+                    printCoffeePrice(coffee);
+                    break;
                 }
                 case "milk": {
                     double ingredients = 0.8;
                     double packaging = 0.7;
 
                     coffee.setPrice(ingredients + packaging);
+                    printCoffeePrice(coffee);
+                    break;
                 }
                 case "espresso": {
                     double ingredients = 1.2;
                     double packaging = 0.7;
 
                     coffee.setPrice(ingredients + packaging);
+                    printCoffeePrice(coffee);
+                    break;
                 }
             }
 
