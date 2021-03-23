@@ -7,24 +7,12 @@ pipeline {
     }
     stages {
         stage('Build') {
-            when {
-                 expression {
-                     BRANCH_NAME == 'master'
-                     echo 'Entering master branch...'
-                 }
-            }
             steps {
                 echo 'Building...'
                 sh 'mvn -B -DskipTests clean package'
             }
         }
         stage('Test') {
-        when {
-                         expression {
-                             BRANCH_NAME == 'master'
-                             echo 'Entering master branch...'
-                         }
-                    }
             steps {
                 echo 'Testing...'
                 sh 'mvn test'
@@ -36,12 +24,6 @@ pipeline {
             }
         }
         stage('Deploy') {
-        when {
-                         expression {
-                             BRANCH_NAME == 'master'
-                             echo 'Entering master branch...'
-                         }
-                    }
             steps {
             echo 'Deploy...'
                 sh './jenkins/scripts/deliver.sh' 
