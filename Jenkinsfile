@@ -19,7 +19,12 @@ pipeline {
             }
         }
         stage('Test') {
-
+        when {
+                         expression {
+                             BRANCH_NAME == 'master'
+                             echo 'Entering master branch...'
+                         }
+                    }
             steps {
                 echo 'Testing...'
                 sh 'mvn test'
@@ -31,6 +36,12 @@ pipeline {
             }
         }
         stage('Deploy') {
+        when {
+                         expression {
+                             BRANCH_NAME == 'master'
+                             echo 'Entering master branch...'
+                         }
+                    }
             steps {
             echo 'Deploy...'
                 sh './jenkins/scripts/deliver.sh' 
