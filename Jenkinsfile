@@ -6,13 +6,20 @@ pipeline {
         }
     }
     stages {
-        stage('Build') { 
+        stage('Build') {
+            when {
+                   expression {
+                       BRANCH_NAME == 'master'
+                       echo 'Entering master branch...'
+                   }
+            }
             steps {
-            echo 'Building...'
-                sh 'mvn -B -DskipTests clean package' 
+                echo 'Building...'
+                    sh 'mvn -B -DskipTests clean package'
             }
         }
         stage('Test') {
+
             steps {
                 echo 'Testing...'
                 sh 'mvn test'
