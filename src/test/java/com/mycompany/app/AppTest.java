@@ -6,7 +6,6 @@ import org.junit.Before;
 import org.junit.Test;
 import org.junit.After;
 import static org.junit.Assert.*;
-import com.mycompany.app.*;
 
 /**
  * Unit test for simple App.
@@ -26,8 +25,7 @@ public class AppTest
     public void testAppMain() throws Exception {
         App.main(null);
         try {
-            assertEquals(1.2, new Coffee().getPrice(), 1.2);
-            assertEquals(1.5, new Coffee().getPrice(), 1.5);
+            assertEquals("Coffee: dark - Price: 1.2" + System.getProperty("line.separator"), outContent.toString());
         } catch (AssertionError e) {
             fail("\"message\" is not \"Coffee: dark - Price: 1.2\"");
         }

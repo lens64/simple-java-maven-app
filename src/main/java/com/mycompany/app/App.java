@@ -15,14 +15,5 @@ public class App
         Coffee coffeeA = new Coffee("dark");
         coffeeA.calculateCoffeePrice(coffeeA);
 
-        // Calculate coffeeB price and print it:
-        CoffeeWithTaste coffeeB = new CoffeeWithTaste("milk");
-        coffeeB.calculateCoffeePrice(coffeeB);
-//
-//        // Test exception:
-//        CoffeeWithTaste coffeeC = new CoffeeWithTaste("blue");
-//        coffeeC.calculateCoffeePrice(coffeeC);
-//        System.out.println(coffeeC.getPrice());
-
     }
 }
