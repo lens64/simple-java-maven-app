@@ -8,14 +8,14 @@ pipeline {
     stages {
         stage('Build') {
             when {
-                   expression {
-                       BRANCH_NAME == 'master'
-                       echo 'Entering master branch...'
-                   }
+                 expression {
+                     BRANCH_NAME == 'master'
+                     echo 'Entering master branch...'
+                 }
             }
             steps {
                 echo 'Building...'
-                    sh 'mvn -B -DskipTests clean package'
+                sh 'mvn -B -DskipTests clean package'
             }
         }
         stage('Test') {
