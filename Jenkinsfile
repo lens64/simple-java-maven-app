@@ -1,12 +1,11 @@
 pipeline {
     agent {
+    environment {
+                            NEW_VERSION = '1.7'
+    }
         docker {
             image 'maven:3-alpine'
             args '-v /root/.m2:/root/.m2'
-
-            environment {
-                        NEW_VERSION = '1.7'
-            }
         }
 
     }
