@@ -4,6 +4,8 @@ public class Coffee {
 
     public String type;
 
+    public String test;
+
     public double price;
 
     public Coffee() {}
