@@ -4,7 +4,7 @@ public class Coffee {
 
     public String type;
 
-    public String test;
+    public String testA;
 
     public double price;
 
